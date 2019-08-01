@@ -58,14 +58,18 @@ class Pokemon extends Component {
 
         return (
             <PokemonDiv>
-                {pokemon.loading ? (
-                    <CircularProgress />
-                ) : pokemon.data.sprites && (
+                {pokemon.loading || !pokemon.data.sprites ?
+                ( 
+                <CircularProgress />
+                ) 
+                    :
+                (
                     <img
                         src={pokemon.data.sprites.front_default}
                         alt={'pokemon'}
                     />
-                )}
+                )
+                }
                 {/* <input type="text" name="pokemon" id="pokemon" onChange={(e)=> this.setState({ name: e.target.value}) }/> */}
 
                 <TextField
