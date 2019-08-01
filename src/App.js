@@ -1,10 +1,14 @@
 import React from 'react';
-import BounceMessage from './components/BounceMessage'
+import { Provider } from 'react-redux'
+import Routes from "./routes";
+import store from './store'
 
 function App() {
   return (
     <div>
-      <BounceMessage message="Bora Começar Galerinha"/>
+        <Provider store={store}>
+            <Routes/>
+        </Provider>
     </div>
   );
 }
